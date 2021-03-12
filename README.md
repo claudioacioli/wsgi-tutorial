@@ -18,8 +18,8 @@ sudo apt upgrade -y
 sudo apt install -y git curl ca-certificates
 
 # Set git globals
-git --config global.email = "your@email.com"
-git --config global.name = "YourName"
+git config --global user.email "your@email.com"
+git config --global user.name "YourName"
 
 # install python venv packaage
 sudo apt install python3-venv
@@ -36,9 +36,10 @@ python3 -m venv venv
 # activate virtual environment
 source venv/bind/activate
 
-# execute script
+# Run it
 python env.py
+
+# Test it
+curl 127.0.0.1:8080
 ```
-
-
 
