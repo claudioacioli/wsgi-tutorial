@@ -1,6 +1,6 @@
 # StartProject
 
-This project follow the instructions of (WSGI Tutorial)[http://wsgi.tutorial.codepoint.net/intro] created by Clodoaldo Pinto Neto. 
+This project follow the instructions of [WSGI Tutorial](http://wsgi.tutorial.codepoint.net/intro) created by Clodoaldo Pinto Neto. 
 
 ```bash
 # Create lxc container
