@@ -2,37 +2,8 @@
 
 from wsgiref.simple_server import make_server
 from cgi import parse_qs, escape
+from util import get_template
 
-html = """
-<!DOCTYPE html>
-<html>
-  <body>
-    <form method="POST" action="">
-      <p>
-        Age: <input type="text" name="age" value="%(age)s">
-      </p>
-      <p>
-        Hobbies:
-        <label>
-          <input name="hobbies" type="checkbox" value="software" %(checked-software)s>
-          Software
-        </label>
-        <label>
-          <input name="hobbies" type="checkbox" value="tunning" %(checked-tunning)s>
-          Auto tunning
-        </label>
-      </p>
-      <p>
-        <input type="submit" value="submit">
-      </p>
-    </form>
-    <p>
-      Age: %(age)s<br>
-      Hobbies: %(hobbies)s
-    </p>
-  </body>
-</html>
-"""
 
 def application (environ, start_response):
 
@@ -52,7 +23,9 @@ def application (environ, start_response):
     age = escape(age)
     hobbies = [escape(hobby) for hobby in hobbies]
 
+    html = get_template('template.html')
     body = html % {
+            'method': 'POST',
             'checked-software': ('', 'checked')['software' in hobbies],
             'checked-tunning': ('', 'checked')['tunning' in hobbies],
             'age': age or 'Empty',
