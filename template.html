@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form method="%(method)s" action="">
+      <p>
+        Age: <input type="text" name="age" value="%(age)s">
+      </p>
+      <p>
+        Hobbies:
+        <label>
+          <input name="hobbies" type="checkbox" value="software" %(checked-software)s>
+          Software
+        </label>
+        <label>
+          <input name="hobbies" type="checkbox" value="tunning" %(checked-tunning)s>
+          Auto tunning
+        </label>
+      </p>
+      <p>
+        <input type="submit" value="submit">
+      </p>
+    </form>
+    <p>
+      Age: %(age)s<br>
+      Hobbies: %(hobbies)s
+    </p>
+  </body>
+</html>
