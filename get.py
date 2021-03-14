@@ -15,6 +15,9 @@ def application (environ, start_response):
     age = query.get('age', [''])[0]
     hobbies = query.get('hobbies', [])
 
+    age = escape(age)
+    hobbies = [escape(hobby) for hobby in hobbies]
+
     html = get_template('template.html')
     body = html % {
             'method': 'GET',
